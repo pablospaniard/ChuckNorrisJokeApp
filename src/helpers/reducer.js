@@ -6,6 +6,8 @@ export default (state, action) => {
       return { ...state, jokes: action.payload }
     case actions.SET_FAVORITES:
       return { ...state, favorites: action.payload }
+    case actions.SET_SHOW_FAVORITES:
+      return { ...state, showFavorites: action.payload }
     case actions.SET_CLICKED:
       return { ...state, clicked: action.payload }
     case actions.SET_ERROR:
