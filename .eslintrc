@@ -90,5 +90,23 @@
         "camelcase": "off",
         "no-plusplus": "off",
         "react-hooks/rules-of-hooks": "error"
+    },
+    "settings": {
+        "import/resolver": {
+            "alias": [
+                [
+                    "colors",
+                    "./src/helpers/colors"
+                ],
+                [
+                    "ui-components",
+                    "./src/components/UI"
+                ],
+                [
+                    "global-api",
+                    "./src/helpers/api.js"
+                ]
+            ]
+        }
     }
 }
