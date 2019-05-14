@@ -1,8 +1,8 @@
 import React from 'react'
 import { render } from 'react-dom'
 
-const Index = () => {
+const App = () => {
   return <div>Hello React</div>
 }
 
-render(<Index />, document.getElementById('root'))
+render(<App />, document.getElementById('root'))
