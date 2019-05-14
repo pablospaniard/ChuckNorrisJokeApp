@@ -6,9 +6,9 @@ import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 import colors from 'colors'
 import { isFavorite, isFull } from 'helpers'
+import { useInterval } from 'hooks'
 
 import JokesContext from '../context'
-import useInterval from '../hooks/useInterval'
 
 const StyledFlexItem = styled(FlexItem)`
   width: 90%;
@@ -31,12 +31,13 @@ const Main = () => {
   const [jokes, setJokes] = useState([])
   const [favorites, setFavorites] = useState([])
   const [clicked, setClicked] = useState(false)
+  const [error, setError] = useState(false)
   const onFetchButtonClickHandler = () => {
     getRandomJokes()
       .then(res => {
         setJokes(res.data.value)
       })
-      .catch(err => console.log(err.response))
+      .catch(() => setError(true))
   }
 
   const onJokeClickHandler = joke => {
@@ -55,10 +56,10 @@ const Main = () => {
           .then(res => {
             setFavorites([...favorites, ...res.data.value])
           })
-          .catch(err => console.log(err.response))
+          .catch(() => setError(true))
       }
     },
-    1000,
+    5000,
     clicked
   )
 
@@ -95,8 +96,12 @@ const Main = () => {
         </FlexContainer>
         <Button onClick={onFetchButtonClickHandler}>Get Jokes</Button>
         <FlexContainer direction="column">
-          {isEmpty(jokes) ? (
-            <p>Please press the button</p>
+          {isEmpty(jokes) || error ? (
+            <p>
+              {!error
+                ? 'Please press the button'
+                : 'Something went wrong, please try later...'}
+            </p>
           ) : (
             jokes.map(joke => (
               <StyledFlexItem

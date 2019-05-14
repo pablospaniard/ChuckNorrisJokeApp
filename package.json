@@ -70,6 +70,7 @@
       "ui-components": "<rootDir>/src/components/UI",
       "global-api(.*)$": "<rootDir>/src/helpers/api.js",
       "colors(.*)$": "<rootDir>/src/helpers/colors.js",
+      "hooks(.*)$": "<rootDir>/src/helpers/hooks",
       "helpers(.*)$": "<rootDir>/src/helpers/helpers.js"
     }
   },
@@ -90,6 +91,7 @@
     "global-api": "./src/helpers/api.js",
     "colors": "./src/helpers/colors.js",
     "helpers": "./src/helpers/helpers.js",
-    "ui-components": "./src/components/UI"
+    "ui-components": "./src/components/UI",
+    "hooks": "./src/helpers/hooks"
   }
 }

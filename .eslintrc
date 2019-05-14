@@ -109,6 +109,10 @@
                 [
                     "helpers",
                     "./src/helpers/helpers.js"
+                ],
+                [
+                    "hooks",
+                    "./src/helpers/hooks"
                 ]
             ]
         }
