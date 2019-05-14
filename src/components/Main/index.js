@@ -17,6 +17,7 @@ const StyledFlexItem = styled(FlexItem)`
   border: 1px solid ${colors.black};
   padding: 10px;
   background-color: ${({ favorite }) => (favorite ? colors.gold : 'inherit')}};
+
   :hover {
     cursor: pointer;
     background-color: ${colors.darkGrey};
@@ -25,6 +26,12 @@ const StyledFlexItem = styled(FlexItem)`
     background-color: ${colors.white};
     color: ${colors.black};
   }
+  ${({ disabled }) =>
+    disabled &&
+    `
+    background-color: ${colors.darkGrey};
+    cursor: not-allowed;
+    pointer-events: none;`}
 `
 
 const Main = () => {
@@ -60,6 +67,8 @@ const Main = () => {
             })
           })
           .catch(() => dispatch({ type: actions.SET_ERROR, payload: true }))
+      } else {
+        dispatch({ type: actions.SET_CLICKED, payload: false })
       }
     },
     1000,
@@ -99,7 +108,12 @@ const Main = () => {
       <Button onClick={onFetchButtonClickHandler}>
         {isEmpty(jokes) ? 'Get Jokes' : 'Try Again'}
       </Button>
-      <FlexContainer direction="column">
+      <FlexContainer
+        direction="column"
+        css={css`
+          margin: 0;
+        `}
+      >
         {isEmpty(jokes) || error ? (
           <p>
             {!error
@@ -111,6 +125,7 @@ const Main = () => {
             <StyledFlexItem
               key={joke.id}
               favorite={isFavorite(favorites, joke)}
+              disabled={isFull(favorites)}
               onClick={() => onJokeClickHandler(joke)}
             >
               {joke.joke}
