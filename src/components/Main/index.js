@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { getRandomJokes, getOneRandomJoke } from 'global-api'
 import { Button, FlexContainer, FlexItem } from 'ui-components'
 import isEmpty from 'lodash/isEmpty'
@@ -8,6 +8,7 @@ import colors from 'colors'
 import { isFavorite, isFull } from 'helpers'
 
 import JokesContext from '../context'
+import useInterval from '../hooks/useInterval'
 
 const StyledFlexItem = styled(FlexItem)`
   width: 90%;
@@ -29,6 +30,7 @@ const Main = () => {
   // we can use here useReducer and for scalability it probably a proper solution, but here i'll stay with useState as it should be enough
   const [jokes, setJokes] = useState([])
   const [favorites, setFavorites] = useState([])
+  const [clicked, setClicked] = useState(false)
   const onFetchButtonClickHandler = () => {
     getRandomJokes()
       .then(res => {
@@ -46,26 +48,24 @@ const Main = () => {
     }
   }
 
-  console.log(favorites)
-
-  const randomJoke = () =>
-    setInterval(() => {
+  useInterval(
+    () => {
       if (!isFull(favorites)) {
         getOneRandomJoke()
           .then(res => {
             setFavorites([...favorites, ...res.data.value])
           })
           .catch(err => console.log(err.response))
-      } else {
-        clearInterval(randomJoke)
       }
-    }, 500)
+    },
+    1000,
+    clicked
+  )
 
   const onRandomButtonClickHandler = () => {
-    randomJoke()
+    setClicked(!clicked)
+    console.log(clicked)
   }
-
-  useEffect(() => {}, [])
 
   return (
     <JokesContext.Provider value={{ favorites }}>
