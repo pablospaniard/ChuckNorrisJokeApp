@@ -11,7 +11,6 @@ import reducer from './helpers/reducer'
 
 const StyledContainer = styled.div`
   width: 900px;
-  height: 100vh;
   margin: 0 auto;
   background-color: ${colors.background};
 `
