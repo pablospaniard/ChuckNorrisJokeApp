@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
-import { getRandomJokes } from 'global-api'
+import React, { useState, useEffect } from 'react'
+import { getRandomJokes, getOneRandomJoke } from 'global-api'
 import { Button, FlexContainer, FlexItem } from 'ui-components'
 import isEmpty from 'lodash/isEmpty'
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 import colors from 'colors'
-import { isFavorite } from 'helpers'
+import { isFavorite, isFull } from 'helpers'
 
 import JokesContext from '../context'
 
@@ -46,12 +46,39 @@ const Main = () => {
     }
   }
 
+  console.log(favorites)
+
+  const randomJoke = () =>
+    setInterval(() => {
+      if (!isFull(favorites)) {
+        getOneRandomJoke()
+          .then(res => {
+            setFavorites([...favorites, ...res.data.value])
+          })
+          .catch(err => console.log(err.response))
+      } else {
+        clearInterval(randomJoke)
+      }
+    }, 500)
+
+  const onRandomButtonClickHandler = () => {
+    randomJoke()
+  }
+
+  useEffect(() => {}, [])
+
   return (
-    <JokesContext.Provider value={{ jokes }}>
+    <JokesContext.Provider value={{ favorites }}>
       <FlexContainer direction="column" alignItems="center">
         <FlexContainer alignItems="center" justifyContent="space-between">
           <FlexItem>
-            <Button bcg={colors.gold}>random</Button>
+            <Button
+              bcg={colors.gold}
+              disabled={isFull(favorites)}
+              onClick={onRandomButtonClickHandler}
+            >
+              Help me
+            </Button>
           </FlexItem>
           <FlexItem>
             <h1>Chuck Norris Jokes</h1>

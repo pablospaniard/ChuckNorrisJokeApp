@@ -13,10 +13,10 @@
 
 #### First part
 
-- [ ] Application where we can fetch 10 Random Chuck Norris jokes
-- [ ] When these jokes are fetched via a button they need to be displayed in a
+- [x] Application where we can fetch 10 Random Chuck Norris jokes
+- [x] When these jokes are fetched via a button they need to be displayed in a
       list
-- [ ] In this list we can mark certain jokes as favourite
+- [x] In this list we can mark certain jokes as favourite
 - [ ] The favourite jokes will appear in a favourites list with a max of 10
       (unique) items
 - [ ] There should be an option to remove jokes from the favourite list as well.
