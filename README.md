@@ -17,11 +17,11 @@
 - [x] When these jokes are fetched via a button they need to be displayed in a
       list
 - [x] In this list we can mark certain jokes as favourite
-- [ ] The favourite jokes will appear in a favourites list with a max of 10
+- [x] The favourite jokes will appear in a favourites list with a max of 10
       (unique) items
-- [ ] There should be an option to remove jokes from the favourite list as well.
+- [x] There should be an option to remove jokes from the favourite list as well.
 - [ ] On refresh the favourites lists should be maintained.
-- [ ] We can also turn on/off a timer via a button (every 5 seconds) who will
+- [x] We can also turn on/off a timer via a button (every 5 seconds) who will
       add one random joke to the favourites list
 
 #### Second part

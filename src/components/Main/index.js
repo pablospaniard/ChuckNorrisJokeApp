@@ -39,7 +39,7 @@ const Main = () => {
         dispatch({ type: actions.SET_CLICKED, payload: false })
       }
     },
-    1000,
+    5000,
     clicked
   )
 
@@ -90,6 +90,9 @@ const Main = () => {
       <Button onClick={onFetchButtonClickHandler} disabled={showFavorites}>
         {isEmpty(jokes) ? 'Get Jokes' : 'Try Again'}
       </Button>
+      {isFull(favorites) ? (
+        <p>You reached limit of favorites list size</p>
+      ) : null}
       <Items />
     </FlexContainer>
   )
