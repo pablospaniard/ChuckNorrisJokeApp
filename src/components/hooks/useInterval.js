@@ -14,16 +14,9 @@ export default function useInterval(callback, delay, running = false) {
     function tick() {
       savedCallback.current()
     }
-    if (delay !== null) {
+    if (running && delay !== null) {
       const id = setInterval(tick, delay)
       return () => clearInterval(id)
-    }
-  }, [delay])
-
-  // keep the timeout dynamic by resetting it whenever its' deps change
-  useEffect(() => {
-    if (!running && delay !== null) {
-      return () => clearInterval(savedCallback.current)
     }
   }, [delay, running])
 }

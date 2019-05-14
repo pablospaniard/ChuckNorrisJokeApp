@@ -64,7 +64,6 @@ const Main = () => {
 
   const onRandomButtonClickHandler = () => {
     setClicked(!clicked)
-    console.log(clicked)
   }
 
   return (
