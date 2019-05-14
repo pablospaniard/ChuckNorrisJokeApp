@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { FlexContainer, FlexItem } from 'ui-components'
 import { css } from '@emotion/core'
 import styled from '@emotion/styled'
@@ -46,6 +46,10 @@ const Items = () => {
       dispatch({ type: actions.SET_FAVORITES, payload: newArray })
     }
   }
+
+  useEffect(() => {
+    window.localStorage.setItem('favorites', JSON.stringify(favorites))
+  }, [favorites])
 
   const items = showFavorites ? favorites : jokes
 

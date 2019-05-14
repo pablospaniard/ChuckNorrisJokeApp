@@ -91,7 +91,7 @@ const Main = () => {
         {isEmpty(jokes) ? 'Get Jokes' : 'Try Again'}
       </Button>
       {isFull(favorites) ? (
-        <p>You reached limit of favorites list size</p>
+        <p>You reached limit of size for favorite&#39;s list </p>
       ) : null}
       <Items />
     </FlexContainer>
