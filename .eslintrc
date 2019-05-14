@@ -105,6 +105,10 @@
                 [
                     "global-api",
                     "./src/helpers/api.js"
+                ],
+                [
+                    "helpers",
+                    "./src/helpers/helpers.js"
                 ]
             ]
         }

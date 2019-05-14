@@ -4,7 +4,7 @@ import colors from 'colors'
 const StyledButton = styled.button`
   font-size: 1rem;
   padding: 5px 10px;
-  background-color: ${colors.blue};
+  background-color: ${({ bcg }) => bcg || colors.blue};
   color: ${colors.white};
   :hover {
     cursor: pointer;

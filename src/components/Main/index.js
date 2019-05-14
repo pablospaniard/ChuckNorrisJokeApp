@@ -3,7 +3,9 @@ import { getRandomJokes } from 'global-api'
 import { Button, FlexContainer, FlexItem } from 'ui-components'
 import isEmpty from 'lodash/isEmpty'
 import styled from '@emotion/styled'
+import { css } from '@emotion/core'
 import colors from 'colors'
+import { isFavorite } from 'helpers'
 
 import JokesContext from '../context'
 
@@ -12,6 +14,7 @@ const StyledFlexItem = styled(FlexItem)`
   margin: 10px auto;
   border: 1px solid ${colors.black};
   padding: 10px;
+  background-color: ${({ favorite }) => (favorite ? colors.gold : 'inherit')}};
   :hover {
     cursor: pointer;
     background-color: ${colors.darkGrey};
@@ -35,7 +38,12 @@ const Main = () => {
   }
 
   const onJokeClickHandler = joke => {
-    setFavorites([...favorites, joke])
+    if (!isFavorite(favorites, joke)) {
+      setFavorites([...favorites, joke])
+    } else {
+      const newArray = favorites.filter(f => f.id !== joke.id)
+      setFavorites(newArray)
+    }
   }
 
   return (
@@ -43,13 +51,20 @@ const Main = () => {
       <FlexContainer direction="column" alignItems="center">
         <FlexContainer alignItems="center" justifyContent="space-between">
           <FlexItem>
-            <button>random</button>
+            <Button bcg={colors.gold}>random</Button>
           </FlexItem>
           <FlexItem>
             <h1>Chuck Norris Jokes</h1>
           </FlexItem>
           <FlexItem>
-            <p>favorites: {favorites.length}</p>
+            <p
+              css={css`
+                color: ${colors.gold};
+                fon
+              `}
+            >
+              favorites: {favorites.length}
+            </p>
           </FlexItem>
         </FlexContainer>
         <Button onClick={onFetchButtonClickHandler}>Get Jokes</Button>
@@ -60,6 +75,7 @@ const Main = () => {
             jokes.map(joke => (
               <StyledFlexItem
                 key={joke.id}
+                favorite={isFavorite(favorites, joke)}
                 onClick={() => onJokeClickHandler(joke)}
               >
                 {joke.joke}
