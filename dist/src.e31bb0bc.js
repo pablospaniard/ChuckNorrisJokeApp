@@ -34418,7 +34418,190 @@ exports.default = _default2;
   var leaveModule = (typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal : require('react-hot-loader')).leaveModule;
   leaveModule && leaveModule(module);
 })();
-},{"react-hot-loader":"../node_modules/react-hot-loader/index.js"}],"../node_modules/axios/lib/helpers/bind.js":[function(require,module,exports) {
+},{"react-hot-loader":"../node_modules/react-hot-loader/index.js"}],"components/UI/Button.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _styledBase = _interopRequireDefault(require("@emotion/styled-base"));
+
+var _colors = _interopRequireDefault(require("colors"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+(function () {
+  var enterModule = (typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal : require('react-hot-loader')).enterModule;
+  enterModule && enterModule(module);
+})();
+
+var StyledButton = (0, _styledBase.default)("button", {
+  target: "e1s8a77u0",
+  label: "StyledButton"
+})("font-size:1rem;padding:5px 10px;background-color:", function (_ref) {
+  var bcg = _ref.bcg;
+  return bcg || _colors.default.blue;
+}, ";color:", _colors.default.white, ";:hover{cursor:pointer;}:disabled{background-color:", _colors.default.darkGrey, ";cursor:not-allowed;pointer-events:none;}:active{filter:brightness(85%);}:focus{outline:none;}" + ("development" === "production" ? "" : "/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIkJ1dHRvbi5qcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFHa0MiLCJmaWxlIjoiQnV0dG9uLmpzIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHN0eWxlZCBmcm9tICdAZW1vdGlvbi9zdHlsZWQnXG5pbXBvcnQgY29sb3JzIGZyb20gJ2NvbG9ycydcblxuY29uc3QgU3R5bGVkQnV0dG9uID0gc3R5bGVkLmJ1dHRvbmBcbiAgZm9udC1zaXplOiAxcmVtO1xuICBwYWRkaW5nOiA1cHggMTBweDtcbiAgYmFja2dyb3VuZC1jb2xvcjogJHsoeyBiY2cgfSkgPT4gYmNnIHx8IGNvbG9ycy5ibHVlfTtcbiAgY29sb3I6ICR7Y29sb3JzLndoaXRlfTtcbiAgOmhvdmVyIHtcbiAgICBjdXJzb3I6IHBvaW50ZXI7XG4gIH1cbiAgOmRpc2FibGVkIHtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAke2NvbG9ycy5kYXJrR3JleX07XG4gICAgY3Vyc29yOiBub3QtYWxsb3dlZDtcbiAgICBwb2ludGVyLWV2ZW50czogbm9uZTtcbiAgfVxuICA6YWN0aXZlIHtcbiAgICBmaWx0ZXI6IGJyaWdodG5lc3MoODUlKTtcbiAgfVxuICA6Zm9jdXMge1xuICAgIG91dGxpbmU6IG5vbmU7XG4gIH1cbmBcblxuZXhwb3J0IGRlZmF1bHQgU3R5bGVkQnV0dG9uXG4iXX0= */"));
+var _default = StyledButton;
+var _default2 = _default;
+exports.default = _default2;
+;
+
+(function () {
+  var reactHotLoader = (typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal : require('react-hot-loader')).default;
+
+  if (!reactHotLoader) {
+    return;
+  }
+
+  reactHotLoader.register(StyledButton, "StyledButton", "/Users/pavel/Google Drive/Code/Projects/chuck-norris-joke/src/components/UI/Button.js");
+  reactHotLoader.register(_default, "default", "/Users/pavel/Google Drive/Code/Projects/chuck-norris-joke/src/components/UI/Button.js");
+})();
+
+;
+
+(function () {
+  var leaveModule = (typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal : require('react-hot-loader')).leaveModule;
+  leaveModule && leaveModule(module);
+})();
+},{"@emotion/styled-base":"../node_modules/@emotion/styled-base/dist/styled-base.browser.esm.js","react-hot-loader":"../node_modules/react-hot-loader/index.js","colors":"helpers/colors.js"}],"components/UI/FlexContainer.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _styledBase = _interopRequireDefault(require("@emotion/styled-base"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+(function () {
+  var enterModule = (typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal : require('react-hot-loader')).enterModule;
+  enterModule && enterModule(module);
+})();
+
+var _default = (0, _styledBase.default)("div", {
+  target: "e1btrmvj0"
+})("display:flex;flex-flow:", function (_ref) {
+  var direction = _ref.direction;
+  return direction || 'row';
+}, " nowrap;justify-content:", function (_ref2) {
+  var justifyContent = _ref2.justifyContent;
+  return justifyContent || 'flex-start';
+}, ";align-items:", function (_ref3) {
+  var alignItems = _ref3.alignItems;
+  return alignItems || 'flex-start';
+}, ";margin:20px 0;" + ("development" === "production" ? "" : "/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIkZsZXhDb250YWluZXIuanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBRXlCIiwiZmlsZSI6IkZsZXhDb250YWluZXIuanMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgc3R5bGVkIGZyb20gJ0BlbW90aW9uL3N0eWxlZCdcblxuZXhwb3J0IGRlZmF1bHQgc3R5bGVkLmRpdmBcbiAgZGlzcGxheTogZmxleDtcbiAgZmxleC1mbG93OiAkeyh7IGRpcmVjdGlvbiB9KSA9PiBkaXJlY3Rpb24gfHwgJ3Jvdyd9IG5vd3JhcDtcbiAganVzdGlmeS1jb250ZW50OiAkeyh7IGp1c3RpZnlDb250ZW50IH0pID0+IGp1c3RpZnlDb250ZW50IHx8ICdmbGV4LXN0YXJ0J307XG4gIGFsaWduLWl0ZW1zOiAkeyh7IGFsaWduSXRlbXMgfSkgPT4gYWxpZ25JdGVtcyB8fCAnZmxleC1zdGFydCd9O1xuICBtYXJnaW46IDIwcHggMDtcbmBcbiJdfQ== */"));
+
+var _default2 = _default;
+exports.default = _default2;
+;
+
+(function () {
+  var reactHotLoader = (typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal : require('react-hot-loader')).default;
+
+  if (!reactHotLoader) {
+    return;
+  }
+
+  reactHotLoader.register(_default, "default", "/Users/pavel/Google Drive/Code/Projects/chuck-norris-joke/src/components/UI/FlexContainer.js");
+})();
+
+;
+
+(function () {
+  var leaveModule = (typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal : require('react-hot-loader')).leaveModule;
+  leaveModule && leaveModule(module);
+})();
+},{"@emotion/styled-base":"../node_modules/@emotion/styled-base/dist/styled-base.browser.esm.js","react-hot-loader":"../node_modules/react-hot-loader/index.js"}],"components/UI/FlexItem.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _styledBase = _interopRequireDefault(require("@emotion/styled-base"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+(function () {
+  var enterModule = (typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal : require('react-hot-loader')).enterModule;
+  enterModule && enterModule(module);
+})();
+
+var _default = (0, _styledBase.default)("div", {
+  target: "evlcx2k0"
+})("flex-direction:", function (_ref) {
+  var direction = _ref.direction;
+  return direction || 'row';
+}, ";flex:", function (_ref2) {
+  var flex = _ref2.flex;
+  return flex || '1 1 auto';
+}, ";display:", function (_ref3) {
+  var display = _ref3.display;
+  return display || 'block';
+}, ";margin:", function (_ref4) {
+  var margin = _ref4.margin;
+  return margin || '0 20px';
+}, ";" + ("development" === "production" ? "" : "/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIkZsZXhJdGVtLmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUV5QiIsImZpbGUiOiJGbGV4SXRlbS5qcyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBzdHlsZWQgZnJvbSAnQGVtb3Rpb24vc3R5bGVkJ1xuXG5leHBvcnQgZGVmYXVsdCBzdHlsZWQuZGl2YFxuICBmbGV4LWRpcmVjdGlvbjogJHsoeyBkaXJlY3Rpb24gfSkgPT4gZGlyZWN0aW9uIHx8ICdyb3cnfTtcbiAgZmxleDogJHsoeyBmbGV4IH0pID0+IGZsZXggfHwgJzEgMSBhdXRvJ307XG4gIGRpc3BsYXk6ICR7KHsgZGlzcGxheSB9KSA9PiBkaXNwbGF5IHx8ICdibG9jayd9O1xuICBtYXJnaW46ICR7KHsgbWFyZ2luIH0pID0+IG1hcmdpbiB8fCAnMCAyMHB4J307XG5gXG4iXX0= */"));
+
+var _default2 = _default;
+exports.default = _default2;
+;
+
+(function () {
+  var reactHotLoader = (typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal : require('react-hot-loader')).default;
+
+  if (!reactHotLoader) {
+    return;
+  }
+
+  reactHotLoader.register(_default, "default", "/Users/pavel/Google Drive/Code/Projects/chuck-norris-joke/src/components/UI/FlexItem.js");
+})();
+
+;
+
+(function () {
+  var leaveModule = (typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal : require('react-hot-loader')).leaveModule;
+  leaveModule && leaveModule(module);
+})();
+},{"@emotion/styled-base":"../node_modules/@emotion/styled-base/dist/styled-base.browser.esm.js","react-hot-loader":"../node_modules/react-hot-loader/index.js"}],"components/UI/index.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+Object.defineProperty(exports, "Button", {
+  enumerable: true,
+  get: function () {
+    return _Button.default;
+  }
+});
+Object.defineProperty(exports, "FlexContainer", {
+  enumerable: true,
+  get: function () {
+    return _FlexContainer.default;
+  }
+});
+Object.defineProperty(exports, "FlexItem", {
+  enumerable: true,
+  get: function () {
+    return _FlexItem.default;
+  }
+});
+
+var _Button = _interopRequireDefault(require("./Button"));
+
+var _FlexContainer = _interopRequireDefault(require("./FlexContainer"));
+
+var _FlexItem = _interopRequireDefault(require("./FlexItem"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+},{"./Button":"components/UI/Button.js","./FlexContainer":"components/UI/FlexContainer.js","./FlexItem":"components/UI/FlexItem.js"}],"../node_modules/axios/lib/helpers/bind.js":[function(require,module,exports) {
 'use strict';
 
 module.exports = function bind(fn, thisArg) {
@@ -36110,190 +36293,7 @@ exports.getOneRandomJoke = getOneRandomJoke;
   var leaveModule = (typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal : require('react-hot-loader')).leaveModule;
   leaveModule && leaveModule(module);
 })();
-},{"react-hot-loader":"../node_modules/react-hot-loader/index.js","axios":"../node_modules/axios/index.js"}],"components/UI/Button.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _styledBase = _interopRequireDefault(require("@emotion/styled-base"));
-
-var _colors = _interopRequireDefault(require("colors"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-(function () {
-  var enterModule = (typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal : require('react-hot-loader')).enterModule;
-  enterModule && enterModule(module);
-})();
-
-var StyledButton = (0, _styledBase.default)("button", {
-  target: "e1s8a77u0",
-  label: "StyledButton"
-})("font-size:1rem;padding:5px 10px;background-color:", function (_ref) {
-  var bcg = _ref.bcg;
-  return bcg || _colors.default.blue;
-}, ";color:", _colors.default.white, ";:hover{cursor:pointer;}:disabled{background-color:", _colors.default.darkGrey, ";cursor:not-allowed;pointer-events:none;}:active{filter:brightness(85%);}:focus{outline:none;}" + ("development" === "production" ? "" : "/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIkJ1dHRvbi5qcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFHa0MiLCJmaWxlIjoiQnV0dG9uLmpzIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHN0eWxlZCBmcm9tICdAZW1vdGlvbi9zdHlsZWQnXG5pbXBvcnQgY29sb3JzIGZyb20gJ2NvbG9ycydcblxuY29uc3QgU3R5bGVkQnV0dG9uID0gc3R5bGVkLmJ1dHRvbmBcbiAgZm9udC1zaXplOiAxcmVtO1xuICBwYWRkaW5nOiA1cHggMTBweDtcbiAgYmFja2dyb3VuZC1jb2xvcjogJHsoeyBiY2cgfSkgPT4gYmNnIHx8IGNvbG9ycy5ibHVlfTtcbiAgY29sb3I6ICR7Y29sb3JzLndoaXRlfTtcbiAgOmhvdmVyIHtcbiAgICBjdXJzb3I6IHBvaW50ZXI7XG4gIH1cbiAgOmRpc2FibGVkIHtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAke2NvbG9ycy5kYXJrR3JleX07XG4gICAgY3Vyc29yOiBub3QtYWxsb3dlZDtcbiAgICBwb2ludGVyLWV2ZW50czogbm9uZTtcbiAgfVxuICA6YWN0aXZlIHtcbiAgICBmaWx0ZXI6IGJyaWdodG5lc3MoODUlKTtcbiAgfVxuICA6Zm9jdXMge1xuICAgIG91dGxpbmU6IG5vbmU7XG4gIH1cbmBcblxuZXhwb3J0IGRlZmF1bHQgU3R5bGVkQnV0dG9uXG4iXX0= */"));
-var _default = StyledButton;
-var _default2 = _default;
-exports.default = _default2;
-;
-
-(function () {
-  var reactHotLoader = (typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal : require('react-hot-loader')).default;
-
-  if (!reactHotLoader) {
-    return;
-  }
-
-  reactHotLoader.register(StyledButton, "StyledButton", "/Users/pavel/Google Drive/Code/Projects/chuck-norris-joke/src/components/UI/Button.js");
-  reactHotLoader.register(_default, "default", "/Users/pavel/Google Drive/Code/Projects/chuck-norris-joke/src/components/UI/Button.js");
-})();
-
-;
-
-(function () {
-  var leaveModule = (typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal : require('react-hot-loader')).leaveModule;
-  leaveModule && leaveModule(module);
-})();
-},{"@emotion/styled-base":"../node_modules/@emotion/styled-base/dist/styled-base.browser.esm.js","react-hot-loader":"../node_modules/react-hot-loader/index.js","colors":"helpers/colors.js"}],"components/UI/FlexContainer.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _styledBase = _interopRequireDefault(require("@emotion/styled-base"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-(function () {
-  var enterModule = (typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal : require('react-hot-loader')).enterModule;
-  enterModule && enterModule(module);
-})();
-
-var _default = (0, _styledBase.default)("div", {
-  target: "e1btrmvj0"
-})("display:flex;flex-flow:", function (_ref) {
-  var direction = _ref.direction;
-  return direction || 'row';
-}, " nowrap;justify-content:", function (_ref2) {
-  var justifyContent = _ref2.justifyContent;
-  return justifyContent || 'flex-start';
-}, ";align-items:", function (_ref3) {
-  var alignItems = _ref3.alignItems;
-  return alignItems || 'flex-start';
-}, ";margin:20px 0;" + ("development" === "production" ? "" : "/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIkZsZXhDb250YWluZXIuanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBRXlCIiwiZmlsZSI6IkZsZXhDb250YWluZXIuanMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgc3R5bGVkIGZyb20gJ0BlbW90aW9uL3N0eWxlZCdcblxuZXhwb3J0IGRlZmF1bHQgc3R5bGVkLmRpdmBcbiAgZGlzcGxheTogZmxleDtcbiAgZmxleC1mbG93OiAkeyh7IGRpcmVjdGlvbiB9KSA9PiBkaXJlY3Rpb24gfHwgJ3Jvdyd9IG5vd3JhcDtcbiAganVzdGlmeS1jb250ZW50OiAkeyh7IGp1c3RpZnlDb250ZW50IH0pID0+IGp1c3RpZnlDb250ZW50IHx8ICdmbGV4LXN0YXJ0J307XG4gIGFsaWduLWl0ZW1zOiAkeyh7IGFsaWduSXRlbXMgfSkgPT4gYWxpZ25JdGVtcyB8fCAnZmxleC1zdGFydCd9O1xuICBtYXJnaW46IDIwcHggMDtcbmBcbiJdfQ== */"));
-
-var _default2 = _default;
-exports.default = _default2;
-;
-
-(function () {
-  var reactHotLoader = (typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal : require('react-hot-loader')).default;
-
-  if (!reactHotLoader) {
-    return;
-  }
-
-  reactHotLoader.register(_default, "default", "/Users/pavel/Google Drive/Code/Projects/chuck-norris-joke/src/components/UI/FlexContainer.js");
-})();
-
-;
-
-(function () {
-  var leaveModule = (typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal : require('react-hot-loader')).leaveModule;
-  leaveModule && leaveModule(module);
-})();
-},{"@emotion/styled-base":"../node_modules/@emotion/styled-base/dist/styled-base.browser.esm.js","react-hot-loader":"../node_modules/react-hot-loader/index.js"}],"components/UI/FlexItem.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _styledBase = _interopRequireDefault(require("@emotion/styled-base"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-(function () {
-  var enterModule = (typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal : require('react-hot-loader')).enterModule;
-  enterModule && enterModule(module);
-})();
-
-var _default = (0, _styledBase.default)("div", {
-  target: "evlcx2k0"
-})("flex-direction:", function (_ref) {
-  var direction = _ref.direction;
-  return direction || 'row';
-}, ";flex:", function (_ref2) {
-  var flex = _ref2.flex;
-  return flex || '1 1 auto';
-}, ";display:", function (_ref3) {
-  var display = _ref3.display;
-  return display || 'block';
-}, ";margin:", function (_ref4) {
-  var margin = _ref4.margin;
-  return margin || '0 20px';
-}, ";" + ("development" === "production" ? "" : "/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIkZsZXhJdGVtLmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUV5QiIsImZpbGUiOiJGbGV4SXRlbS5qcyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBzdHlsZWQgZnJvbSAnQGVtb3Rpb24vc3R5bGVkJ1xuXG5leHBvcnQgZGVmYXVsdCBzdHlsZWQuZGl2YFxuICBmbGV4LWRpcmVjdGlvbjogJHsoeyBkaXJlY3Rpb24gfSkgPT4gZGlyZWN0aW9uIHx8ICdyb3cnfTtcbiAgZmxleDogJHsoeyBmbGV4IH0pID0+IGZsZXggfHwgJzEgMSBhdXRvJ307XG4gIGRpc3BsYXk6ICR7KHsgZGlzcGxheSB9KSA9PiBkaXNwbGF5IHx8ICdibG9jayd9O1xuICBtYXJnaW46ICR7KHsgbWFyZ2luIH0pID0+IG1hcmdpbiB8fCAnMCAyMHB4J307XG5gXG4iXX0= */"));
-
-var _default2 = _default;
-exports.default = _default2;
-;
-
-(function () {
-  var reactHotLoader = (typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal : require('react-hot-loader')).default;
-
-  if (!reactHotLoader) {
-    return;
-  }
-
-  reactHotLoader.register(_default, "default", "/Users/pavel/Google Drive/Code/Projects/chuck-norris-joke/src/components/UI/FlexItem.js");
-})();
-
-;
-
-(function () {
-  var leaveModule = (typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal : require('react-hot-loader')).leaveModule;
-  leaveModule && leaveModule(module);
-})();
-},{"@emotion/styled-base":"../node_modules/@emotion/styled-base/dist/styled-base.browser.esm.js","react-hot-loader":"../node_modules/react-hot-loader/index.js"}],"components/UI/index.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-Object.defineProperty(exports, "Button", {
-  enumerable: true,
-  get: function () {
-    return _Button.default;
-  }
-});
-Object.defineProperty(exports, "FlexContainer", {
-  enumerable: true,
-  get: function () {
-    return _FlexContainer.default;
-  }
-});
-Object.defineProperty(exports, "FlexItem", {
-  enumerable: true,
-  get: function () {
-    return _FlexItem.default;
-  }
-});
-
-var _Button = _interopRequireDefault(require("./Button"));
-
-var _FlexContainer = _interopRequireDefault(require("./FlexContainer"));
-
-var _FlexItem = _interopRequireDefault(require("./FlexItem"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-},{"./Button":"components/UI/Button.js","./FlexContainer":"components/UI/FlexContainer.js","./FlexItem":"components/UI/FlexItem.js"}],"../node_modules/lodash/_nativeKeys.js":[function(require,module,exports) {
+},{"react-hot-loader":"../node_modules/react-hot-loader/index.js","axios":"../node_modules/axios/index.js"}],"../node_modules/lodash/_nativeKeys.js":[function(require,module,exports) {
 var overArg = require('./_overArg');
 
 /* Built-in method references for those with the same name as other `lodash` methods. */
@@ -36669,7 +36669,7 @@ exports.default = _default2;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.SET_ERROR = exports.SET_CLICKED = exports.SET_SHOW_FAVORITES = exports.SET_FAVORITES = exports.SET_JOKES = void 0;
+exports.SET_AUTH = exports.SET_ERROR = exports.SET_CLICKED = exports.SET_SHOW_FAVORITES = exports.SET_FAVORITES = exports.SET_JOKES = void 0;
 
 (function () {
   var enterModule = (typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal : require('react-hot-loader')).enterModule;
@@ -36686,6 +36686,8 @@ var SET_CLICKED = 'SET_CLICKED';
 exports.SET_CLICKED = SET_CLICKED;
 var SET_ERROR = 'SET_ERROR';
 exports.SET_ERROR = SET_ERROR;
+var SET_AUTH = 'SET_AUTH';
+exports.SET_AUTH = SET_AUTH;
 ;
 
 (function () {
@@ -36700,6 +36702,7 @@ exports.SET_ERROR = SET_ERROR;
   reactHotLoader.register(SET_SHOW_FAVORITES, "SET_SHOW_FAVORITES", "/Users/pavel/Google Drive/Code/Projects/chuck-norris-joke/src/helpers/actions.js");
   reactHotLoader.register(SET_CLICKED, "SET_CLICKED", "/Users/pavel/Google Drive/Code/Projects/chuck-norris-joke/src/helpers/actions.js");
   reactHotLoader.register(SET_ERROR, "SET_ERROR", "/Users/pavel/Google Drive/Code/Projects/chuck-norris-joke/src/helpers/actions.js");
+  reactHotLoader.register(SET_AUTH, "SET_AUTH", "/Users/pavel/Google Drive/Code/Projects/chuck-norris-joke/src/helpers/actions.js");
 })();
 
 ;
@@ -37016,9 +37019,19 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
+var _styledBase = _interopRequireDefault(require("@emotion/styled-base"));
+
 var _core = require("@emotion/core");
 
-var _react = _interopRequireDefault(require("react"));
+var _react = _interopRequireWildcard(require("react"));
+
+var _uiComponents = require("ui-components");
+
+var _context = _interopRequireDefault(require("../../helpers/context"));
+
+var actions = _interopRequireWildcard(require("../../helpers/actions"));
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -37027,8 +37040,78 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
   enterModule && enterModule(module);
 })();
 
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
+
+function _iterableToArrayLimit(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+var StyledDiv = (0, _styledBase.default)("div", {
+  target: "e1w02k6f0",
+  label: "StyledDiv"
+})("development" === "production" ? {
+  name: "cim9vz",
+  styles: "height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;"
+} : {
+  name: "cim9vz",
+  styles: "height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;",
+  map: "/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImluZGV4LmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQU80QiIsImZpbGUiOiJpbmRleC5qcyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBSZWFjdCwgeyB1c2VDb250ZXh0LCB1c2VTdGF0ZSwgdXNlRWZmZWN0IH0gZnJvbSAncmVhY3QnXG5pbXBvcnQgeyBGbGV4Q29udGFpbmVyLCBGbGV4SXRlbSwgQnV0dG9uIH0gZnJvbSAndWktY29tcG9uZW50cydcbmltcG9ydCBzdHlsZWQgZnJvbSAnQGVtb3Rpb24vc3R5bGVkJ1xuXG5pbXBvcnQgSm9rZXNDb250ZXh0IGZyb20gJy4uLy4uL2hlbHBlcnMvY29udGV4dCdcbmltcG9ydCAqIGFzIGFjdGlvbnMgZnJvbSAnLi4vLi4vaGVscGVycy9hY3Rpb25zJ1xuXG5jb25zdCBTdHlsZWREaXYgPSBzdHlsZWQuZGl2YFxuICBoZWlnaHQ6IDEwMCU7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XG4gIGp1c3RpZnktY29udGVudDogY2VudGVyO1xuICBhbGlnbi1pdGVtczogY2VudGVyO1xuYFxuXG5jb25zdCBMb2dpbiA9ICgpID0+IHtcbiAgY29uc3QgeyBkaXNwYXRjaCB9ID0gdXNlQ29udGV4dChKb2tlc0NvbnRleHQpXG4gIGNvbnN0IFtuYW1lLCBzZXROYW1lXSA9IHVzZVN0YXRlKCcnKVxuICBjb25zdCBbcGFzc3dvcmQsIHNldFBhc3N3b3JkXSA9IHVzZVN0YXRlKCcnKVxuXG4gIHVzZUVmZmVjdCgoKSA9PiB7XG4gICAgY29uc3Qgc2F2ZWRVc2VyID0gSlNPTi5wYXJzZShzZXNzaW9uU3RvcmFnZS5nZXRJdGVtKCd1c2VyJykpXG4gICAgaWYgKHNhdmVkVXNlcikge1xuICAgICAgZGlzcGF0Y2goeyB0eXBlOiBhY3Rpb25zLlNFVF9BVVRILCBwYXlsb2FkOiB0cnVlIH0pXG4gICAgfVxuICB9LCBbXSlcblxuICBjb25zdCBvbkxvZ0luQnV0dG9uQ2xpY2tIYW5kbGVyID0gKCkgPT4ge1xuICAgIGRpc3BhdGNoKHsgdHlwZTogYWN0aW9ucy5TRVRfQVVUSCwgcGF5bG9hZDogdHJ1ZSB9KVxuICAgIHNlc3Npb25TdG9yYWdlLnNldEl0ZW0oJ3VzZXInLCBKU09OLnN0cmluZ2lmeSh7IG5hbWUsIHBhc3N3b3JkIH0pKVxuICB9XG5cbiAgcmV0dXJuIChcbiAgICA8U3R5bGVkRGl2PlxuICAgICAgPEZsZXhDb250YWluZXI+XG4gICAgICAgIDxGbGV4SXRlbT5cbiAgICAgICAgICA8cD5Vc2VybmFtZTwvcD5cbiAgICAgICAgICA8aW5wdXQgdHlwZT1cInRleHRcIiBvbkNoYW5nZT17KHsgdGFyZ2V0IH0pID0+IHNldE5hbWUodGFyZ2V0LnZhbHVlKX0gLz5cbiAgICAgICAgPC9GbGV4SXRlbT5cbiAgICAgICAgPEZsZXhJdGVtPlxuICAgICAgICAgIDxwPlBhc3N3b3JkPC9wPlxuICAgICAgICAgIDxpbnB1dFxuICAgICAgICAgICAgdHlwZT1cInRleHRcIlxuICAgICAgICAgICAgb25DaGFuZ2U9eyh7IHRhcmdldCB9KSA9PiBzZXRQYXNzd29yZCh0YXJnZXQudmFsdWUpfVxuICAgICAgICAgIC8+XG4gICAgICAgIDwvRmxleEl0ZW0+XG4gICAgICA8L0ZsZXhDb250YWluZXI+XG4gICAgICA8RmxleENvbnRhaW5lcj5cbiAgICAgICAgPEZsZXhJdGVtPlxuICAgICAgICAgIDxCdXR0b25cbiAgICAgICAgICAgIGRpc2FibGVkPXshbmFtZSB8fCAhcGFzc3dvcmR9XG4gICAgICAgICAgICBvbkNsaWNrPXtvbkxvZ0luQnV0dG9uQ2xpY2tIYW5kbGVyfVxuICAgICAgICAgID5cbiAgICAgICAgICAgIExvZyBJblxuICAgICAgICAgIDwvQnV0dG9uPlxuICAgICAgICA8L0ZsZXhJdGVtPlxuICAgICAgPC9GbGV4Q29udGFpbmVyPlxuICAgIDwvU3R5bGVkRGl2PlxuICApXG59XG5cbmV4cG9ydCBkZWZhdWx0IExvZ2luXG4iXX0= */"
+});
+
 var Login = function Login() {
-  return (0, _core.jsx)("div", null, "Login");
+  var _useContext = (0, _react.useContext)(_context.default),
+      dispatch = _useContext.dispatch;
+
+  var _useState = (0, _react.useState)(''),
+      _useState2 = _slicedToArray(_useState, 2),
+      name = _useState2[0],
+      setName = _useState2[1];
+
+  var _useState3 = (0, _react.useState)(''),
+      _useState4 = _slicedToArray(_useState3, 2),
+      password = _useState4[0],
+      setPassword = _useState4[1];
+
+  (0, _react.useEffect)(function () {
+    var savedUser = JSON.parse(sessionStorage.getItem('user'));
+
+    if (savedUser) {
+      dispatch({
+        type: actions.SET_AUTH,
+        payload: true
+      });
+    }
+  }, []);
+
+  var onLogInButtonClickHandler = function onLogInButtonClickHandler() {
+    dispatch({
+      type: actions.SET_AUTH,
+      payload: true
+    });
+    sessionStorage.setItem('user', JSON.stringify({
+      name: name,
+      password: password
+    }));
+  };
+
+  return (0, _core.jsx)(StyledDiv, null, (0, _core.jsx)(_uiComponents.FlexContainer, null, (0, _core.jsx)(_uiComponents.FlexItem, null, (0, _core.jsx)("p", null, "Username"), (0, _core.jsx)("input", {
+    type: "text",
+    onChange: function onChange(_ref) {
+      var target = _ref.target;
+      return setName(target.value);
+    }
+  })), (0, _core.jsx)(_uiComponents.FlexItem, null, (0, _core.jsx)("p", null, "Password"), (0, _core.jsx)("input", {
+    type: "text",
+    onChange: function onChange(_ref2) {
+      var target = _ref2.target;
+      return setPassword(target.value);
+    }
+  }))), (0, _core.jsx)(_uiComponents.FlexContainer, null, (0, _core.jsx)(_uiComponents.FlexItem, null, (0, _core.jsx)(_uiComponents.Button, {
+    disabled: !name || !password,
+    onClick: onLogInButtonClickHandler
+  }, "Log In"))));
 };
 
 var _default = Login;
@@ -37043,6 +37126,7 @@ exports.default = _default2;
     return;
   }
 
+  reactHotLoader.register(StyledDiv, "StyledDiv", "/Users/pavel/Google Drive/Code/Projects/chuck-norris-joke/src/components/Login/index.js");
   reactHotLoader.register(Login, "Login", "/Users/pavel/Google Drive/Code/Projects/chuck-norris-joke/src/components/Login/index.js");
   reactHotLoader.register(_default, "default", "/Users/pavel/Google Drive/Code/Projects/chuck-norris-joke/src/components/Login/index.js");
 })();
@@ -37053,7 +37137,7 @@ exports.default = _default2;
   var leaveModule = (typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal : require('react-hot-loader')).leaveModule;
   leaveModule && leaveModule(module);
 })();
-},{"@emotion/core":"../node_modules/@emotion/core/dist/core.browser.esm.js","react-hot-loader":"../node_modules/react-hot-loader/index.js","react":"../node_modules/react/index.js"}],"components/index.js":[function(require,module,exports) {
+},{"@emotion/styled-base":"../node_modules/@emotion/styled-base/dist/styled-base.browser.esm.js","@emotion/core":"../node_modules/@emotion/core/dist/core.browser.esm.js","react-hot-loader":"../node_modules/react-hot-loader/index.js","react":"../node_modules/react/index.js","ui-components":"components/UI/index.js","../../helpers/context":"helpers/context.js","../../helpers/actions":"helpers/actions.js"}],"components/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -37101,7 +37185,8 @@ var _default = {
   favorites: JSON.parse(window.localStorage.getItem('favorites')) || [],
   clicked: false,
   error: false,
-  showFavorites: false
+  showFavorites: false,
+  auth: false
 };
 var _default2 = _default;
 exports.default = _default2;
@@ -37171,6 +37256,11 @@ var _default = function _default(state, action) {
         error: action.payload
       });
 
+    case actions.SET_AUTH:
+      return _objectSpread({}, state, {
+        auth: action.payload
+      });
+
     default:
       throw new Error("There is no action type ".concat(action.type, " defined"));
   }
@@ -37209,6 +37299,8 @@ var _reactDom = require("react-dom");
 
 var _colors = _interopRequireDefault(require("colors"));
 
+var _uiComponents = require("ui-components");
+
 var _components = require("./components");
 
 var _context = _interopRequireDefault(require("./helpers/context"));
@@ -37216,6 +37308,8 @@ var _context = _interopRequireDefault(require("./helpers/context"));
 var _InitialState = _interopRequireDefault(require("./helpers/InitialState"));
 
 var _reducer = _interopRequireDefault(require("./helpers/reducer"));
+
+var actions = _interopRequireWildcard(require("./helpers/actions"));
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
 
@@ -37237,7 +37331,13 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 var StyledContainer = (0, _styledBase.default)("div", {
   target: "e1yjw3tr0",
   label: "StyledContainer"
-})("width:900px;margin:0 auto;background-color:", _colors.default.background, ";" + ("development" === "production" ? "" : "/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImluZGV4LmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQVdrQyIsImZpbGUiOiJpbmRleC5qcyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBSZWFjdCwgeyB1c2VSZWR1Y2VyIH0gZnJvbSAncmVhY3QnXG5pbXBvcnQgeyByZW5kZXIgfSBmcm9tICdyZWFjdC1kb20nXG5pbXBvcnQgc3R5bGVkIGZyb20gJ0BlbW90aW9uL3N0eWxlZCdcbmltcG9ydCBjb2xvcnMgZnJvbSAnY29sb3JzJ1xuXG5pbXBvcnQgeyBNYWluIH0gZnJvbSAnLi9jb21wb25lbnRzJ1xuXG5pbXBvcnQgSm9rZXNDb250ZXh0IGZyb20gJy4vaGVscGVycy9jb250ZXh0J1xuaW1wb3J0IGluaXRpYWxTdGF0ZSBmcm9tICcuL2hlbHBlcnMvSW5pdGlhbFN0YXRlJ1xuaW1wb3J0IHJlZHVjZXIgZnJvbSAnLi9oZWxwZXJzL3JlZHVjZXInXG5cbmNvbnN0IFN0eWxlZENvbnRhaW5lciA9IHN0eWxlZC5kaXZgXG4gIHdpZHRoOiA5MDBweDtcbiAgbWFyZ2luOiAwIGF1dG87XG4gIGJhY2tncm91bmQtY29sb3I6ICR7Y29sb3JzLmJhY2tncm91bmR9O1xuYFxuXG5jb25zdCBBcHAgPSAoKSA9PiB7XG4gIGNvbnN0IFtzdGF0ZSwgZGlzcGF0Y2hdID0gdXNlUmVkdWNlcihyZWR1Y2VyLCBpbml0aWFsU3RhdGUpXG4gIHJldHVybiAoXG4gICAgPEpva2VzQ29udGV4dC5Qcm92aWRlciB2YWx1ZT17eyBzdGF0ZSwgZGlzcGF0Y2ggfX0+XG4gICAgICA8U3R5bGVkQ29udGFpbmVyPlxuICAgICAgICA8TWFpbiAvPlxuICAgICAgPC9TdHlsZWRDb250YWluZXI+XG4gICAgPC9Kb2tlc0NvbnRleHQuUHJvdmlkZXI+XG4gIClcbn1cblxucmVuZGVyKDxBcHAgLz4sIGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdyb290JykpXG4iXX0= */"));
+})("width:900px;margin:0 auto;background-color:", _colors.default.background, ";" + ("development" === "production" ? "" : "/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImluZGV4LmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQWFrQyIsImZpbGUiOiJpbmRleC5qcyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBSZWFjdCwgeyB1c2VSZWR1Y2VyIH0gZnJvbSAncmVhY3QnXG5pbXBvcnQgeyByZW5kZXIgfSBmcm9tICdyZWFjdC1kb20nXG5pbXBvcnQgc3R5bGVkIGZyb20gJ0BlbW90aW9uL3N0eWxlZCdcbmltcG9ydCBjb2xvcnMgZnJvbSAnY29sb3JzJ1xuaW1wb3J0IHsgQnV0dG9uIH0gZnJvbSAndWktY29tcG9uZW50cydcblxuaW1wb3J0IHsgTWFpbiwgTG9naW4gfSBmcm9tICcuL2NvbXBvbmVudHMnXG5cbmltcG9ydCBKb2tlc0NvbnRleHQgZnJvbSAnLi9oZWxwZXJzL2NvbnRleHQnXG5pbXBvcnQgaW5pdGlhbFN0YXRlIGZyb20gJy4vaGVscGVycy9Jbml0aWFsU3RhdGUnXG5pbXBvcnQgcmVkdWNlciBmcm9tICcuL2hlbHBlcnMvcmVkdWNlcidcbmltcG9ydCAqIGFzIGFjdGlvbnMgZnJvbSAnLi9oZWxwZXJzL2FjdGlvbnMnXG5cbmNvbnN0IFN0eWxlZENvbnRhaW5lciA9IHN0eWxlZC5kaXZgXG4gIHdpZHRoOiA5MDBweDtcbiAgbWFyZ2luOiAwIGF1dG87XG4gIGJhY2tncm91bmQtY29sb3I6ICR7Y29sb3JzLmJhY2tncm91bmR9O1xuYFxuXG5jb25zdCBTdHlsZWRCdXR0b24gPSBzdHlsZWQoQnV0dG9uKWBcbiAgZmxvYXQ6IHJpZ2h0O1xuICBjb2xvcjogJHtjb2xvcnMuYmxhY2t9O1xuICA6aG92ZXIge1xuICAgIGN1cnNvciBwb2ludGVyXG4gIH1cbmBcblxuY29uc3QgQXBwID0gKCkgPT4ge1xuICBjb25zdCBbc3RhdGUsIGRpc3BhdGNoXSA9IHVzZVJlZHVjZXIocmVkdWNlciwgaW5pdGlhbFN0YXRlKVxuICBjb25zdCB7IGF1dGggfSA9IHN0YXRlXG5cbiAgY29uc3Qgb25Mb2dPdXRCdXR0b25DbGlja0hhbmRsZXIgPSAoKSA9PiB7XG4gICAgZGlzcGF0Y2goeyB0eXBlOiBhY3Rpb25zLlNFVF9BVVRILCBwYXlsb2FkOiBmYWxzZSB9KVxuICAgIHNlc3Npb25TdG9yYWdlLnJlbW92ZUl0ZW0oJ3VzZXInKVxuICB9XG5cbiAgcmV0dXJuIChcbiAgICA8Sm9rZXNDb250ZXh0LlByb3ZpZGVyIHZhbHVlPXt7IHN0YXRlLCBkaXNwYXRjaCB9fT5cbiAgICAgIDxTdHlsZWRCdXR0b24gYmNnPXtjb2xvcnMuZ3JleX0gb25DbGljaz17b25Mb2dPdXRCdXR0b25DbGlja0hhbmRsZXJ9PlxuICAgICAgICBMb2cgb3V0XG4gICAgICA8L1N0eWxlZEJ1dHRvbj5cbiAgICAgIDxTdHlsZWRDb250YWluZXI+e2F1dGggPyA8TWFpbiAvPiA6IDxMb2dpbiAvPn08L1N0eWxlZENvbnRhaW5lcj5cbiAgICA8L0pva2VzQ29udGV4dC5Qcm92aWRlcj5cbiAgKVxufVxuXG5yZW5kZXIoPEFwcCAvPiwgZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ3Jvb3QnKSlcbiJdfQ== */"));
+var StyledButton = (
+/*#__PURE__*/
+0, _styledBase.default)(_uiComponents.Button, {
+  target: "e1yjw3tr1",
+  label: "StyledButton"
+})("float:right;color:", _colors.default.black, ";:hover{cursor pointer}" + ("development" === "production" ? "" : "/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImluZGV4LmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQW1CbUMiLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgUmVhY3QsIHsgdXNlUmVkdWNlciB9IGZyb20gJ3JlYWN0J1xuaW1wb3J0IHsgcmVuZGVyIH0gZnJvbSAncmVhY3QtZG9tJ1xuaW1wb3J0IHN0eWxlZCBmcm9tICdAZW1vdGlvbi9zdHlsZWQnXG5pbXBvcnQgY29sb3JzIGZyb20gJ2NvbG9ycydcbmltcG9ydCB7IEJ1dHRvbiB9IGZyb20gJ3VpLWNvbXBvbmVudHMnXG5cbmltcG9ydCB7IE1haW4sIExvZ2luIH0gZnJvbSAnLi9jb21wb25lbnRzJ1xuXG5pbXBvcnQgSm9rZXNDb250ZXh0IGZyb20gJy4vaGVscGVycy9jb250ZXh0J1xuaW1wb3J0IGluaXRpYWxTdGF0ZSBmcm9tICcuL2hlbHBlcnMvSW5pdGlhbFN0YXRlJ1xuaW1wb3J0IHJlZHVjZXIgZnJvbSAnLi9oZWxwZXJzL3JlZHVjZXInXG5pbXBvcnQgKiBhcyBhY3Rpb25zIGZyb20gJy4vaGVscGVycy9hY3Rpb25zJ1xuXG5jb25zdCBTdHlsZWRDb250YWluZXIgPSBzdHlsZWQuZGl2YFxuICB3aWR0aDogOTAwcHg7XG4gIG1hcmdpbjogMCBhdXRvO1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAke2NvbG9ycy5iYWNrZ3JvdW5kfTtcbmBcblxuY29uc3QgU3R5bGVkQnV0dG9uID0gc3R5bGVkKEJ1dHRvbilgXG4gIGZsb2F0OiByaWdodDtcbiAgY29sb3I6ICR7Y29sb3JzLmJsYWNrfTtcbiAgOmhvdmVyIHtcbiAgICBjdXJzb3IgcG9pbnRlclxuICB9XG5gXG5cbmNvbnN0IEFwcCA9ICgpID0+IHtcbiAgY29uc3QgW3N0YXRlLCBkaXNwYXRjaF0gPSB1c2VSZWR1Y2VyKHJlZHVjZXIsIGluaXRpYWxTdGF0ZSlcbiAgY29uc3QgeyBhdXRoIH0gPSBzdGF0ZVxuXG4gIGNvbnN0IG9uTG9nT3V0QnV0dG9uQ2xpY2tIYW5kbGVyID0gKCkgPT4ge1xuICAgIGRpc3BhdGNoKHsgdHlwZTogYWN0aW9ucy5TRVRfQVVUSCwgcGF5bG9hZDogZmFsc2UgfSlcbiAgICBzZXNzaW9uU3RvcmFnZS5yZW1vdmVJdGVtKCd1c2VyJylcbiAgfVxuXG4gIHJldHVybiAoXG4gICAgPEpva2VzQ29udGV4dC5Qcm92aWRlciB2YWx1ZT17eyBzdGF0ZSwgZGlzcGF0Y2ggfX0+XG4gICAgICA8U3R5bGVkQnV0dG9uIGJjZz17Y29sb3JzLmdyZXl9IG9uQ2xpY2s9e29uTG9nT3V0QnV0dG9uQ2xpY2tIYW5kbGVyfT5cbiAgICAgICAgTG9nIG91dFxuICAgICAgPC9TdHlsZWRCdXR0b24+XG4gICAgICA8U3R5bGVkQ29udGFpbmVyPnthdXRoID8gPE1haW4gLz4gOiA8TG9naW4gLz59PC9TdHlsZWRDb250YWluZXI+XG4gICAgPC9Kb2tlc0NvbnRleHQuUHJvdmlkZXI+XG4gIClcbn1cblxucmVuZGVyKDxBcHAgLz4sIGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdyb290JykpXG4iXX0= */"));
 
 var App = function App() {
   var _useReducer = (0, _react.useReducer)(_reducer.default, _InitialState.default),
@@ -37245,12 +37345,25 @@ var App = function App() {
       state = _useReducer2[0],
       dispatch = _useReducer2[1];
 
+  var auth = state.auth;
+
+  var onLogOutButtonClickHandler = function onLogOutButtonClickHandler() {
+    dispatch({
+      type: actions.SET_AUTH,
+      payload: false
+    });
+    sessionStorage.removeItem('user');
+  };
+
   return (0, _core.jsx)(_context.default.Provider, {
     value: {
       state: state,
       dispatch: dispatch
     }
-  }, (0, _core.jsx)(StyledContainer, null, (0, _core.jsx)(_components.Main, null)));
+  }, (0, _core.jsx)(StyledButton, {
+    bcg: _colors.default.grey,
+    onClick: onLogOutButtonClickHandler
+  }, "Log out"), (0, _core.jsx)(StyledContainer, null, auth ? (0, _core.jsx)(_components.Main, null) : (0, _core.jsx)(_components.Login, null)));
 };
 
 (0, _reactDom.render)((0, _core.jsx)(App, null), document.getElementById('root'));
@@ -37264,6 +37377,7 @@ var App = function App() {
   }
 
   reactHotLoader.register(StyledContainer, "StyledContainer", "/Users/pavel/Google Drive/Code/Projects/chuck-norris-joke/src/index.js");
+  reactHotLoader.register(StyledButton, "StyledButton", "/Users/pavel/Google Drive/Code/Projects/chuck-norris-joke/src/index.js");
   reactHotLoader.register(App, "App", "/Users/pavel/Google Drive/Code/Projects/chuck-norris-joke/src/index.js");
 })();
 
@@ -37273,7 +37387,7 @@ var App = function App() {
   var leaveModule = (typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal : require('react-hot-loader')).leaveModule;
   leaveModule && leaveModule(module);
 })();
-},{"@emotion/styled-base":"../node_modules/@emotion/styled-base/dist/styled-base.browser.esm.js","@emotion/core":"../node_modules/@emotion/core/dist/core.browser.esm.js","react-hot-loader":"../node_modules/react-hot-loader/index.js","react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/index.js","colors":"helpers/colors.js","./components":"components/index.js","./helpers/context":"helpers/context.js","./helpers/InitialState":"helpers/InitialState.js","./helpers/reducer":"helpers/reducer.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"@emotion/styled-base":"../node_modules/@emotion/styled-base/dist/styled-base.browser.esm.js","@emotion/core":"../node_modules/@emotion/core/dist/core.browser.esm.js","react-hot-loader":"../node_modules/react-hot-loader/index.js","react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/index.js","colors":"helpers/colors.js","ui-components":"components/UI/index.js","./components":"components/index.js","./helpers/context":"helpers/context.js","./helpers/InitialState":"helpers/InitialState.js","./helpers/reducer":"helpers/reducer.js","./helpers/actions":"helpers/actions.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -37301,7 +37415,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60696" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64530" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

@@ -12,6 +12,8 @@ export default (state, action) => {
       return { ...state, clicked: action.payload }
     case actions.SET_ERROR:
       return { ...state, error: action.payload }
+    case actions.SET_AUTH:
+      return { ...state, auth: action.payload }
 
     default:
       throw new Error(`There is no action type ${action.type} defined`)
