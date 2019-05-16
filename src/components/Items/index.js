@@ -48,7 +48,7 @@ const Items = () => {
   }
 
   useEffect(() => {
-    window.localStorage.setItem('favorites', JSON.stringify(favorites))
+    localStorage.setItem('favorites', JSON.stringify(favorites))
   }, [favorites])
 
   const items = showFavorites ? favorites : jokes

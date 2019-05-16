@@ -1,4 +1,4 @@
-import React, { useReducer } from 'react'
+import React, { useReducer, useEffect } from 'react'
 import { render } from 'react-dom'
 import styled from '@emotion/styled'
 import colors from 'colors'
@@ -29,6 +29,15 @@ const App = () => {
   const [state, dispatch] = useReducer(reducer, initialState)
   const { auth } = state
 
+  useEffect(() => {
+    const savedUser = JSON.parse(sessionStorage.getItem('user'))
+    if (savedUser) {
+      dispatch({ type: actions.SET_AUTH, payload: true })
+    } else {
+      dispatch({ type: actions.SET_AUTH, payload: false })
+    }
+  }, [])
+
   const onLogOutButtonClickHandler = () => {
     dispatch({ type: actions.SET_AUTH, payload: false })
     sessionStorage.removeItem('user')
@@ -39,7 +48,11 @@ const App = () => {
       <StyledButton bcg={colors.grey} onClick={onLogOutButtonClickHandler}>
         Log out
       </StyledButton>
-      <StyledContainer>{auth ? <Main /> : <Login />}</StyledContainer>
+      {auth !== null ? (
+        <StyledContainer>{auth ? <Main /> : <Login />}</StyledContainer>
+      ) : (
+        <p>Loading...</p>
+      )}
     </JokesContext.Provider>
   )
 }

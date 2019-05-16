@@ -1,8 +1,8 @@
 export default {
   jokes: [],
-  favorites: JSON.parse(window.localStorage.getItem('favorites')) || [],
+  favorites: JSON.parse(localStorage.getItem('favorites')) || [],
   clicked: false,
   error: false,
   showFavorites: false,
-  auth: false
+  auth: null
 }
