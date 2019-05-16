@@ -41,7 +41,7 @@
     "parcel-plugin-bundle-visualiser": "^1.2.0",
     "parcel-plugin-eslint": "^1.0.6",
     "prettier": "^1.14.3",
-    "react-testing-library": "6.0.4"
+    "react-testing-library": "^7.0.0"
   },
   "dependencies": {
     "@babel/plugin-syntax-dynamic-import": "^7.2.0",
@@ -61,9 +61,6 @@
   "jest": {
     "rootDir": "./",
     "testURL": "http://localhost/",
-    "collectCoverageFrom": [
-      "<rootDir>/**/*.{js,jsx}"
-    ],
     "setupTestFrameworkScriptFile": "<rootDir>/setupTests.js",
     "testRegex": "(/__tests__/.*\\.(test|spec))\\.[jt]sx?$",
     "moduleNameMapper": {

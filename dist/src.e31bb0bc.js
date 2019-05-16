@@ -31782,6 +31782,8 @@ var configuration = {
   disableHotRenderer: false,
   // Disable "hot-replacement-render" when injection into react-dom is made
   disableHotRendererWhenInjected: false,
+  // Controls `react-🔥-dom patch` notification
+  showReactDomPatchNotification: true,
   // Hook on babel component register.
   onComponentRegister: false,
   // Hook on React renders for a first time component
@@ -32857,7 +32859,7 @@ var ErrorOverlay = function (_React$Component) {
       style: {
         margin: 0
       }
-    }, "\u269B\uFE0F\uD83D\uDD25\uD83D\uDE2D: hot update was not successful", ' ', React__default.createElement('button', {
+    }, "\u269B\uFE0F\uD83D\uDD25\uD83D\uDE2D: hot update was not successful ", React__default.createElement('button', {
       onClick: this.toggle
     }, visible ? 'collapse' : 'expand'), React__default.createElement('button', {
       onClick: this.retry
@@ -33038,6 +33040,8 @@ var markUpdate = function markUpdate(_ref) {
       cacheBusterProp: true
     }, fiber.memoizedProps);
   }
+
+  if (fiber.stateNode) ;
 };
 
 var cleanupReact = function cleanupReact() {
@@ -33703,23 +33707,6 @@ setStandInOptions({
 var AppContainer = function (_React$Component) {
   inherits(AppContainer, _React$Component);
 
-  function AppContainer() {
-    var _temp, _this, _ret;
-
-    classCallCheck(this, AppContainer);
-
-    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    return _ret = (_temp = (_this = possibleConstructorReturn(this, _React$Component.call.apply(_React$Component, [this].concat(args))), _this), _this.state = {
-      error: null,
-      errorInfo: null,
-      // eslint-disable-next-line react/no-unused-state
-      generation: 0
-    }, _temp), possibleConstructorReturn(_this, _ret);
-  }
-
   AppContainer.getDerivedStateFromProps = function getDerivedStateFromProps(nextProps, prevState) {
     if (prevState.generation !== get$1()) {
       // Hot reload is happening.
@@ -33731,6 +33718,25 @@ var AppContainer = function (_React$Component) {
 
     return null;
   };
+
+  function AppContainer(props) {
+    classCallCheck(this, AppContainer);
+
+    var _this = possibleConstructorReturn(this, _React$Component.call(this, props));
+
+    if (configuration.showReactDomPatchNotification) {
+      configuration.showReactDomPatchNotification = false;
+      console.warn('React-Hot-Loader: react-🔥-dom patch is not detected. React 16.6+ features may not work.');
+    }
+
+    _this.state = {
+      error: null,
+      errorInfo: null,
+      // eslint-disable-next-line react/no-unused-state
+      generation: 0
+    };
+    return _this;
+  }
 
   AppContainer.prototype.shouldComponentUpdate = function shouldComponentUpdate(prevProps, prevState) {
     // Don't update the component if the state had an error and still has one.
@@ -33816,9 +33822,9 @@ AppContainer.propTypes = {
   errorBoundary: PropTypes.bool
 };
 AppContainer.defaultProps = {
-  errorBoundary: true //  trying first react-lifecycles-compat.polyfill, then trying react-lifecycles-compat, which could be .default
+  errorBoundary: true
+}; //  trying first react-lifecycles-compat.polyfill, then trying react-lifecycles-compat, which could be .default
 
-};
 var realPolyfill = defaultPolyfill.polyfill || defaultPolyfill__default;
 realPolyfill(AppContainer);
 var lazyConstructor = '_ctor';
@@ -33914,7 +33920,7 @@ var compareComponents = function compareComponents(oldType, newType, setNewType,
     if (oldType.type === newType.type || areSwappable(oldType.type, newType.type)) {
       if (baseType) {
         // memo form different fibers, why?
-        if (oldType === baseType) {
+        if (baseType.$$typeof === newType.$$typeof) {
           setNewType(newType);
         } else {
           setNewType(newType.type);
@@ -34024,6 +34030,7 @@ var reactHotLoader = {
     if (isContextType({
       type: type
     })) {
+      // possible options - Context, Consumer, Provider.
       ['Provider', 'Consumer'].forEach(function (prop) {
         var descriptor = Object.getOwnPropertyDescriptor(type, prop);
 
@@ -34073,9 +34080,7 @@ var reactHotLoader = {
       configuration.disableHotRenderer = configuration.disableHotRendererWhenInjected;
       configuration.ignoreSFC = configuration.ignoreSFCWhenInjected;
       reactHotLoader.IS_REACT_MERGE_ENABLED = true;
-    } else {
-      // Actually everything works...
-      console.warn('React-Hot-Loader: react-🔥-dom patch is not detected. React 16.6+ features may not work.');
+      configuration.showReactDomPatchNotification = false; // console.warn('react-🔥-loader activated.');
     }
     /* eslint-enable */
 
@@ -34215,20 +34220,20 @@ var createHoc = function createHoc(SourceComponent, TargetComponent) {
   return TargetComponent;
 };
 
-var makeHotExport = function makeHotExport(sourceModule) {
+var makeHotExport = function makeHotExport(sourceModule, moduleId) {
   var updateInstances = function updateInstances(possibleError) {
     if (possibleError && possibleError instanceof Error) {
       console.error(possibleError);
       return;
     }
 
-    var module = hotModule(sourceModule.id);
+    var module = hotModule(moduleId);
     clearTimeout(module.updateTimeout);
     module.updateTimeout = setTimeout(function () {
       try {
-        requireIndirect(sourceModule.id);
+        requireIndirect(moduleId);
       } catch (e) {
-        console.error('React-Hot-Loader: error detected while loading', sourceModule.id);
+        console.error('React-Hot-Loader: error detected while loading', moduleId);
         console.error(e);
       }
 
@@ -34257,16 +34262,21 @@ var makeHotExport = function makeHotExport(sourceModule) {
 };
 
 var hot = function hot(sourceModule) {
-  if (!sourceModule || !sourceModule.id) {
+  if (!sourceModule || !sourceModule.hot) {
     // this is fatal
-    throw new Error('React-hot-loader: `hot` could not find the `id` property in the `module` you have provided');
+    throw new Error('React-hot-loader: `hot` could not find the `hot` method in the `module` you have provided');
   }
 
-  var moduleId = sourceModule.id;
+  var moduleId = sourceModule.id || sourceModule.i || sourceModule.filename;
+
+  if (!moduleId) {
+    throw new Error('React-hot-loader: `hot` could not find the `name` of the the `module` you have provided');
+  }
+
   var module = hotModule(moduleId);
-  makeHotExport(sourceModule);
+  makeHotExport(sourceModule, moduleId);
   clearExceptions();
-  var failbackTimer = chargeFailbackTimer(sourceModule.id);
+  var failbackTimer = chargeFailbackTimer(moduleId);
   var firstHotRegistered = false; // TODO: Ensure that all exports from this file are react components.
 
   return function (WrappedComponent, props) {
@@ -34352,9 +34362,13 @@ exports.setConfig = setConfig;
 },{"react":"../node_modules/react/index.js","shallowequal":"../node_modules/shallowequal/index.js","react-dom":"../node_modules/react-dom/index.js","fast-levenshtein":"../node_modules/fast-levenshtein/levenshtein.js","prop-types":"../node_modules/prop-types/index.js","react-lifecycles-compat":"../node_modules/react-lifecycles-compat/react-lifecycles-compat.es.js","hoist-non-react-statics":"../node_modules/hoist-non-react-statics/dist/hoist-non-react-statics.cjs.js","lodash/merge":"../node_modules/lodash/merge.js"}],"../node_modules/react-hot-loader/index.js":[function(require,module,exports) {
 'use strict';
 
-var hasWindow = typeof window !== 'undefined';
-
-if (!module.hot || "development" === 'production' || !hasWindow) {
+if ("development" === 'production') {
+  module.exports = require('./dist/react-hot-loader.production.min.js');
+} else if (!module.hot) {
+  console.error('React-Hot-Loader: Hot Module Replacement is not enabled');
+  module.exports = require('./dist/react-hot-loader.production.min.js');
+} else if (typeof window === 'undefined') {
+  // this is just server environment
   module.exports = require('./dist/react-hot-loader.production.min.js');
 } else {
   var evalAllowed = false;
@@ -37556,7 +37570,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56344" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52387" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
