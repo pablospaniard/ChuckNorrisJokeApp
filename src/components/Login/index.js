@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect } from 'react'
-import { FlexContainer, FlexItem, Button } from 'ui-components'
+import { FlexContainer, FlexItem, Button, Input } from 'ui-components'
 import styled from '@emotion/styled'
 
 import JokesContext from '../../helpers/context'
@@ -35,11 +35,11 @@ const Login = () => {
       <FlexContainer>
         <FlexItem>
           <p>Username</p>
-          <input type="text" onChange={({ target }) => setName(target.value)} />
+          <Input type="text" onChange={({ target }) => setName(target.value)} />
         </FlexItem>
         <FlexItem>
           <p>Password</p>
-          <input
+          <Input
             type="text"
             onChange={({ target }) => setPassword(target.value)}
           />

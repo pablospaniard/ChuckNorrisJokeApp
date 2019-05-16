@@ -6,5 +6,7 @@ export default {
   darkGrey: '#aaaaaa',
   black: '#000',
   white: '#fff',
-  gold: '#c28548'
+  gold: '#c28548',
+  green: '#5cb85c',
+  red: '#d9534f'
 }
