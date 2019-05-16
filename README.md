@@ -26,7 +26,7 @@
 
 #### Second part
 
-- [ ] Create a login popup that will log you in for the current session. And
+- [x] Create a login popup that will log you in for the current session. And
       only appear when the user hasn't logged in yet for the current session.
 - [ ] The login form should consist of a username and password which must comply
       to the following password security requirements:

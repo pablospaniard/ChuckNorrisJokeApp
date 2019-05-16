@@ -12,7 +12,6 @@ const StyledButton = styled.button`
   :disabled {
     background-color: ${colors.darkGrey};
     cursor: not-allowed;
-    pointer-events: none;
   }
   :active {
     filter: brightness(85%);
