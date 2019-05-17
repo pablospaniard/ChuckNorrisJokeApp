@@ -28,7 +28,7 @@
 
 - [x] Create a login popup that will log you in for the current session. And
       only appear when the user hasn't logged in yet for the current session.
-- [ ] The login form should consist of a username and password which must comply
+- [x] The login form should consist of a username and password which must comply
       to the following password security requirements:
   1. Passwords must include one increasing straight of at least three letters,
      like abc , cde , fgh , and so on, up to xyz . They cannot skip letters; acd
